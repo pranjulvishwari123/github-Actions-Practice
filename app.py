@@ -1,8 +1,8 @@
 
-
-#this is python flask code    
+# This is Python Flask code
 
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
