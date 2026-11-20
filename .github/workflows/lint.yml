@@ -1,64 +1,64 @@
 # # whenever there is change in the file (app.py) 
 # # the use of the lint.yml file is to detect the syntatical, indentational, spelling, formatting errors of the file (here app.py) or either the file is correct or not 
-# name: Auto Linter
-# on:
-#     push:
-#       paths: "*.py"
-# jobs:
-#     code:
-#       runs-on: ubuntu-latest
-#       #this step will automatically clone the code of the current branch into the runner
-#       steps:
-#         - name: Checkout
-#           uses: actions/checkout@v7.0.1
-
-# #this step will install the linting Tool of python 
-#         - name: Install Linter
-#           run : pip install ruff
-
-#         - name: Run linter
-#           run: ruff check .
-
-#         - name: Check formatting
-#           run: ruff format --check .
-
-
-
 name: Auto Linter
-
 on:
-  push:
-    paths:
-      - "**/*.py"
-  pull_request:
-    paths:
-      - "**/*.py"
-  workflow_dispatch:
-
+    push:
+      paths: "*.py"
 jobs:
-  code:
-    runs-on: ubuntu-latest
+    code:
+      runs-on: ubuntu-latest
+      #this step will automatically clone the code of the current branch into the runner
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v7.0.1
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+#this step will install the linting Tool of python 
+        - name: Install Linter
+          run : pip install ruff
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+        - name: Run linter
+          run: ruff check .
 
-      - name: Install Linter
-        run: pip install ruff
-
-      - name: Run Linter
-        run: ruff check .
-
-      - name: Check Formatting
-        run: ruff format --check .
+        - name: Check formatting
+          run: ruff format --check .
 
 
-# hi it is sample comment 
+
+# name: Auto Linter
+
+# on:
+#   push:
+#     paths:
+#       - "**/*.py"
+#   pull_request:
+#     paths:
+#       - "**/*.py"
+#   workflow_dispatch:
+
+# jobs:
+#   code:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       - name: Install Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.12"
+
+#       - name: Install Linter
+#         run: pip install ruff
+
+#       - name: Run Linter
+#         run: ruff check .
+
+#       - name: Check Formatting
+#         run: ruff format --check .
+
+
+# # hi it is sample comment 
 
 
 
