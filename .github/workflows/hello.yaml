@@ -1,0 +1,21 @@
+# workflow  (it should have the name)
+# jobs  (it will be inside the workflows)
+# steps (it will be inside the job)
+# action (it will be inside the steps)
+#on - tells that when the workflow will run
+#jobs - what the workflow will do. there can be one or more more than one job 
+#(here) say hello is the first job (there can be multiple jobs)
+# runs-on: ubuntu-latest <--------> creates an ephermal(that creates and destroy just agter use) container uith ubuntu running 
+#ephermal container have some steps to execute we name those steps and run them  
+#run - it has the commands like shell commands etc...
+
+
+name: Hello
+on:
+    workflow_dispatch:
+jobs: 
+    SayHello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: say hello to everyone
+              run : echo "hello dosto"
